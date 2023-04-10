@@ -1,0 +1,53 @@
+implicit intent
+ btn.setOnClickListener {
+            var intent=Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse("https://www.charusat.ac.in/"))
+            startActivity(intent)
+
+
+        }
+
+in manifest
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+image button
+ var ibtn:ImageButton=findViewById(R.id.ibtn1)
+        ibtn.setOnClickListener {
+            var intent= Intent(Intent.ACTION_VIEW)
+            intent.setData(Uri.parse("https://www.charusat.ac.in/"))
+            startActivity(intent)
+        }
+
+in xml code
+android:src="@drawable/logo1"
+
+image view
+ var iview:ImageView=findViewById(R.id.iview1)
+        iview.setOnClickListener {
+            Toast.makeText(this,"image view ",Toast.LENGTH_LONG).show()
+        }
+
+    var sb:Switch=findViewById(R.id.switch1)
+        sb.setOnCheckedChangeListener { _, Checked ,->
+            if (sb.isChecked)
+            {
+                Toast.makeText(this,"on",Toast.LENGTH_LONG).show()
+            }
+            else
+            {
+                Toast.makeText(this,"off",Toast.LENGTH_LONG).show()
+            }
+
+
+        }
+
+        var tb:ToggleButton=findViewById(R.id.toggleButton)
+        tb.setOnCheckedChangeListener { _,Checked, ->
+            if (tb.isChecked)
+            {
+                Toast.makeText(this,"on",Toast.LENGTH_LONG).show()
+            }
+            else
+            {
+                Toast.makeText(this,"off",Toast.LENGTH_LONG).show()
+            }
